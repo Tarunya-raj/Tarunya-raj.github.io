@@ -1,4 +1,194 @@
----
-layout: home
-# Index page
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tarunya Rajan — C++ Systems Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f4;--panel:#fff;--ink:#14202b;--mute:#566474;--line:#cfd7df;--acc:#1f5fbf;--acc2:#b36b00;--slot:#dde3e9;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10171e;--panel:#18222c;--ink:#e8edf2;--mute:#9aa8b6;--line:#2a3743;--acc:#6aa3f0;--acc2:#e0a23a;--slot:#26323d}}
+:root[data-theme="dark"]{--bg:#10171e;--panel:#18222c;--ink:#e8edf2;--mute:#9aa8b6;--line:#2a3743;--acc:#6aa3f0;--acc2:#e0a23a;--slot:#26323d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Instrument Sans",system-ui,sans-serif}
+.w{max-width:980px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--acc)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:72px 0 56px}
+h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:700;letter-spacing:-.02em}
+.role{font-size:1.25rem;margin:18px 0 10px;font-weight:500}
+.lede{color:var(--mute);max-width:46ch;margin:0 0 24px}
+.links{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:10px 18px;border:1.5px solid var(--ink);border-radius:6px;color:var(--ink);text-decoration:none;font-weight:600}
+.btn.p{background:var(--ink);color:var(--bg)}
+#ring{width:100%;height:auto;max-width:380px;justify-self:center}
+.cap{font-size:.85rem;color:var(--mute);text-align:center;margin-top:6px}
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{font-size:1.9rem;margin-bottom:8px}
+.sub{color:var(--mute);margin:0 0 28px;max-width:60ch}
+.proj{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:26px;margin-bottom:20px}
+.proj h3{font-size:1.5rem}
+.st{display:inline-block;font-size:.85rem;font-weight:600;padding:2px 10px;border-radius:99px;border:1.5px solid var(--acc2);color:var(--acc2);margin-left:10px;vertical-align:middle;font-family:"Instrument Sans",sans-serif}
+.st.ok{border-color:var(--acc);color:var(--acc)}
+.proj p{margin:10px 0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 24px;margin:16px 0 0;padding:16px 0 0;border-top:1px solid var(--line)}
+.facts dt{font-weight:600;font-size:.9rem}
+.facts dd{margin:2px 0 0;color:var(--mute);font-size:.95rem}
+.todo{color:var(--acc2)}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:var(--slot);padding:1px 5px;border-radius:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.cs{border-left:3px solid var(--acc);padding:2px 0 2px 16px}
+.cs h3{font-size:1.1rem;margin-bottom:6px}
+.cs p{margin:0;color:var(--mute);font-size:.97rem}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.tl b{font-weight:600}
+.tl span{color:var(--mute)}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.sk h3{font-size:1rem;margin-bottom:4px}
+.sk p{margin:0;color:var(--mute);font-size:.97rem}
+footer{padding:40px 0 56px;border-top:1px solid var(--line)}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:44px}.tl li{grid-template-columns:1fr;gap:2px}}
+</style>
+</head>
+<body>
+<main class="w">
+<header class="hero">
+  <div>
+    <h1>Tarunya Rajan</h1>
+    <p class="role">C++ systems engineer</p>
+    <p class="lede">Shared-memory IPC, concurrency, and low-level debugging. Six years shipping production C++ on Linux and Windows, now building systems depth in public.</p>
+    <div class="links">
+      <a class="btn p" href="#projects">See the projects</a>
+      <a class="btn" href="mailto:tarunyaraj630@gmail.com">Email me</a>
+    </div>
+  </div>
+  <figure style="margin:0">
+    <svg id="ring" viewBox="0 0 320 320" role="img" aria-label="Animated ring buffer: a producer writes slots while a consumer reads behind it"></svg>
+    <figcaption class="cap">A ring buffer. <span style="color:var(--acc)">Producer</span> writes ahead, <span style="color:var(--acc2)">consumer</span> reads behind.</figcaption>
+  </figure>
+</header>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <p class="sub">Each one links to a repo with design notes, tests, and reproducible benchmarks. Numbers appear here only once they are measured.</p>
+
+  <article class="proj">
+    <h3>LockFreeIPC<span class="st">In progress</span></h3>
+    <p>A zero-copy inter-process communication framework built on shared-memory ring buffers. The goal is a lock-free single-producer, single-consumer path using <code>std::atomic</code>, measured against a mutex baseline.</p>
+    <p><b>Done:</b> ring buffer data structure, and a producer-consumer pipeline using <code>std::mutex</code> and <code>std::condition_variable</code> as the baseline.<br>
+    <b>Next:</b> atomic SPSC version, cache-line padding, benchmarks.</p>
+    <dl class="facts">
+      <div><dt>Stack</dt><dd>C++17, CMake, Google Test, ThreadSanitizer</dd></div>
+      <div><dt>Platform</dt><dd>Windows, Visual Studio</dd></div>
+      <div><dt>Throughput</dt><dd class="todo">[add measured msgs/sec: mutex vs atomic]</dd></div>
+      <div><dt>Latency</dt><dd class="todo">[add p50 / p99 / p99.9]</dd></div>
+      <div><dt>Repo</dt><dd><a href="#" class="todo">[add GitHub link]</a></dd></div>
+      <div><dt>Write-up</dt><dd class="todo">[add design notes or post link]</dd></div>
+    </dl>
+  </article>
+
+  <article class="proj">
+    <h3>UNIX internals<span class="st">In progress</span></h3>
+    <p>An implementation of kernel algorithms from Maurice Bach's <i>The Design of the UNIX Operating System</i>.</p>
+    <dl class="facts">
+      <div><dt>Scope</dt><dd class="todo">[add which algorithms: buffer cache, inodes, ...]</dd></div>
+      <div><dt>Tests</dt><dd class="todo">[add what is covered]</dd></div>
+      <div><dt>What I learned</dt><dd class="todo">[add 1-2 sentences]</dd></div>
+      <div><dt>Repo</dt><dd><a href="#" class="todo">[add GitHub link]</a></dd></div>
+    </dl>
+  </article>
+
+  <article class="proj">
+    <h3>Third project<span class="st">Planned</span></h3>
+    <p class="todo">[add one line: what it is and why it exists, e.g. a pool allocator vs malloc, or a work-stealing thread pool]</p>
+    <dl class="facts">
+      <div><dt>Result</dt><dd class="todo">[add headline number]</dd></div>
+      <div><dt>Repo</dt><dd><a href="#" class="todo">[add GitHub link]</a></dd></div>
+    </dl>
+  </article>
+</section>
+
+<section id="production">
+  <h2>Production work</h2>
+  <p class="sub">From shipped products at Simyog and Agiliad. Figures are approximate and come from my own tracking at the time.</p>
+  <div class="grid">
+    <div class="cs"><h3>Qt 5.7 to 5.15 migration</h3><p>Moved the application across Windows and Linux, built and customised Qt from source, and scripted the setup. Enabled in-app report viewing with Qt WebEngine and cut environment setup effort by about 70%.</p></div>
+    <div class="cs"><h3>Non-blocking progress and logging framework</h3><p>A Singleton-based framework that removed application-wide UI blocking during long simulation runs. Users could open settings, logs, and reports mid-run.</p></div>
+    <div class="cs"><h3>Build and CI/CD infrastructure</h3><p>CMake build scripts and Jenkins pipelines for a newly branched application, plus nightly automated regression runs. Cut build onboarding effort by about 75%.</p></div>
+    <div class="cs"><h3>KVM virtualization</h3><p>Provisioned isolated virtual machines on Linux servers for development and QA, supporting parallel test setups and reducing dependence on physical hardware.</p></div>
+    <div class="cs"><h3>Modern C++ redesign</h3><p>Led a UI and backend workflow redesign across 5+ modules over 4 releases. Introduced RAII, smart pointers, and const correctness, cutting memory-related review findings by about 40%.</p></div>
+    <div class="cs"><h3>Qpid device simulator</h3><p>Emulated client devices for end-to-end testing, raising feature test coverage from roughly 30% to 70%.</p></div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <ul class="tl">
+    <li><span>05/2026 – now</span><div><b>C++ System Engineer, Aloraq Technology</b><br><span>Remote. LockFreeIPC and Linux debugging tooling (gdb, ThreadSanitizer, tcpdump).</span></div></li>
+    <li><span>03/2025 – 04/2026</span><div><b>Focused study</b><br><span>GATE qualified. Concurrency, memory model, and OS internals.</span></div></li>
+    <li><span>04/2022 – 03/2025</span><div><b>Senior Software Engineer, Simyog Technology</b><br><span>Bangalore. Qt/C++ simulation software across 4 major releases.</span></div></li>
+    <li><span>06/2019 – 04/2022</span><div><b>Software Engineer, then Senior, Agiliad Technology</b><br><span>Pune. Build infrastructure, REST and TLS services, PostgreSQL data layer.</span></div></li>
+  </ul>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="sk">
+    <div><h3>Languages</h3><p>C++11/14/17, C, Qt/QML, shell, basic Python</p></div>
+    <div><h3>Systems</h3><p>Multithreading, shared memory, ring buffers, RAII, memory management</p></div>
+    <div><h3>Tooling</h3><p>CMake, GDB, Valgrind, ThreadSanitizer, Google Test, Git, Jenkins</p></div>
+    <div><h3>Platforms</h3><p>Linux (Ubuntu), Windows, KVM</p></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <h2>Contact</h2>
+  <p class="sub">Based in Dubai, UAE. Open to remote and UAE-based C++ systems roles.</p>
+  <div class="links">
+    <a class="btn p" href="mailto:tarunyaraj630@gmail.com">tarunyaraj630@gmail.com</a>
+    <a class="btn" href="https://linkedin.com/in/tarunya-rajan">LinkedIn</a>
+    <a class="btn" href="#">GitHub <span class="todo">[add]</span></a>
+  </div>
+</footer>
+</main>
+<script>
+(function(){
+var svg=document.getElementById('ring'),N=16,cx=160,cy=160,R=112,ns='http://www.w3.org/2000/svg',slots=[];
+for(var i=0;i<N;i++){
+  var a=i/N*360-90,r=document.createElementNS(ns,'rect');
+  r.setAttribute('x',cx-14);r.setAttribute('y',cy-R-18);r.setAttribute('width',28);r.setAttribute('height',36);r.setAttribute('rx',4);
+  r.setAttribute('transform','rotate('+(a+90)+' '+cx+' '+cy+')');
+  r.setAttribute('fill','var(--slot)');r.setAttribute('stroke','var(--line)');
+  svg.appendChild(r);slots.push(r);
+}
+function lbl(t,c){var x=document.createElementNS(ns,'text');x.setAttribute('text-anchor','middle');x.setAttribute('fill',c);x.setAttribute('font-size','13');x.setAttribute('font-weight','600');x.setAttribute('font-family','Instrument Sans,sans-serif');x.textContent=t;svg.appendChild(x);return x}
+var tl=lbl('tail','var(--acc2)'),hl=lbl('head','var(--acc)');
+var head=9,tail=2;
+function draw(){
+  for(var i=0;i<N;i++){
+    var full=((i-tail+N)%N)<((head-tail+N)%N);
+    slots[i].setAttribute('fill',full?'var(--acc)':'var(--slot)');
+    slots[i].setAttribute('fill-opacity',full?'.85':'1');
+  }
+  function place(t,idx,off){var a=(idx/N*360-90)*Math.PI/180;t.setAttribute('x',cx+(R-off)*Math.cos(a));t.setAttribute('y',cy+(R-off)*Math.sin(a)+4)}
+  place(hl,head,38);place(tl,tail,38);
+}
+draw();
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var t=0;
+setInterval(function(){
+  t++;
+  var used=(head-tail+N)%N;
+  if(used<12&&t%3!==0)head=(head+1)%N;
+  if(used>3&&t%2===0)tail=(tail+1)%N;
+  draw();
+},650);
+})();
+</script>
+</body>
+</html>
